@@ -1,6 +1,39 @@
+# ZigZag Conversion
+The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
 
+```
+P   A   H   N
+A P L S I I G
+Y   I   R
+```
+And then read line by line: "PAHNAPLSIIGYIR"
 
-<code>class Solution:
+Write the code that will take a string and make this conversion given a number of rows:
+```
+string convert(string s, int numRows);
+```
+
+Example 1:
+```
+Input: s = "PAYPALISHIRING", numRows = 3
+Output: "PAHNAPLSIIGYIR"
+```
+
+Example 2:
+```
+Input: s = "PAYPALISHIRING", numRows = 4
+Output: "PINALSIGYAHRPI"
+Explanation:
+
+P     I    N
+A   L S  I G
+Y A   H R
+P     I
+```
+
+# Python 3
+```python 3
+class Solution:
     def convert(self, s: str, numRows: int) -> str:
         n = numRows
         str_len = len(s)
@@ -32,22 +65,21 @@
             for index_row in range(0,n):
                 final_str = final_str + split_str[index_row] 
         return final_str  
-		\
+```
 		
+```python3		
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+		if numRows == 1:
+			return s
 		
-		#
-		def convert(self, s: str, numRows: int) -> str:
-			if numRows == 1:
-				return s
-			
-			res = [""] * numRows
-			direction = 1
-			
-			row = 0
-			for char in s:
-				res[row] += char
-				row += direction
-				if row == 0 or row == numRows-1:
-					direction *= -1
-			return "".join(res)
-	</code>
+		res = [""] * numRows
+		direction = 1
+		row = 0
+		for char in s:
+			res[row] += char
+			row += direction
+			if row == 0 or row == numRows-1:
+				direction *= -1
+		return "".join(res)
+```
