@@ -1,2 +1,2 @@
 # LeetCode
- Scripts for LeetCode with faster than 90%
+ Scripts for LeetCode using Python.
