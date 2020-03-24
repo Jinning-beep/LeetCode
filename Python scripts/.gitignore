@@ -1,3 +1,5 @@
 ## ignore the unfinished problems (.ipynb files)
 *.ipynb
-*.py
+
+## ignore files in .ipynb_checkpoints
+.ipynb_checkpoints/
